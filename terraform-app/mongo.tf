@@ -1,6 +1,6 @@
 resource "kubernetes_service" "mongo" {
   metadata {
-    name = "terraform-mongo"
+    name = "${var.mongodb_host}"
   }
   spec {
     selector = {
@@ -16,7 +16,7 @@ resource "kubernetes_service" "mongo" {
 
 resource "kubernetes_pod" "mongo" {
   metadata {
-    name = "terraform-mongo"
+    name = "${var.mongodb_host}"
     labels = {
       app = "MyApp"
     }
@@ -24,8 +24,8 @@ resource "kubernetes_pod" "mongo" {
 
   spec {
     container {
-      image = "mongo"
-      name  = "mongo"
+      image = "${var.mongo_image}"
+      name  = "${var.mongodb_host}"
     }
   }
 }

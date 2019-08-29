@@ -26,7 +26,7 @@ resource "kubernetes_pod" "node" {
     container {
       image = "drpdishant/node-mongo:1.0"
       name  = "node"
-
+      command = ["/usr/local/wait-for-it.sh","--timeout=1200","terraform-mongo:27017","--","npm","start"]
       port {
           container_port = 3000
       }
@@ -34,6 +34,7 @@ resource "kubernetes_pod" "node" {
           name = "MONGODB_URL" 
           value = "mongodb://terraform-mongo:27017/noobjs_dev"
       }
+      
     }
   }
 }
