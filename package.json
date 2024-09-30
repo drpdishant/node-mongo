@@ -36,7 +36,7 @@
     "cors": "~2.8.5",
     "cross-env": "~5.2.0",
     "csurf": "~1.10.0",
-    "dotenv": "~8.0.0",
+    "dotenv": "~16.4.5",
     "express": "~4.17.0",
     "express-session": "~1.16.1",
     "helmet": "~3.18.0",
