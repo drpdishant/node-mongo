@@ -68,6 +68,6 @@
     "npm-check-updates": "~3.1.9",
     "prettier": "~1.17.1",
     "supertest": "*",
-    "tape": "~4.10.1"
+    "tape": "~5.9.0"
   }
 }
